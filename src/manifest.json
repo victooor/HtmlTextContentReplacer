@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Html replacer",
+    "version": "1.0.0",
+    "permissions": [ "tabs", "activeTab", "storage" ],
+    "options_page": "index.html#/options",
+    "browser_action": {
+      "default_title": "Open Popup!",
+      "default_popup": "index.html#/popup"
+    },
+    "icons": {
+      "16": "assets/images/html16.png",
+      "32": "assets/images/html32.png",
+      "48": "assets/images/html48.png",
+      "128": "assets/images/html128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*/*"], 
+        "js": ["executer.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

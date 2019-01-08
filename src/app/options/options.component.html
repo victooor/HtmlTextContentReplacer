@@ -1,0 +1,58 @@
+<div class="urlsection">
+  <h2>Define replacement values</h2>
+</div>
+
+<form class="example-form" (ngSubmit)="save()" #optionsForm="ngForm">
+    <div class="urlsection">
+      <ng-container>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Url on which to apply</mat-label>
+          <input matInput [(ngModel)]="urlToBeApplied" name="urlToBeApplied">
+          <mat-hint>The search and replace will be applied only on the above mentioned url</mat-hint>
+        </mat-form-field> 
+      </ng-container>
+    </div>
+    <br /> <br />
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" align="center">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <ng-container matColumnDef="search">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element">
+          Replace &nbsp;
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="element.search" [name]="element.search != '' ? element.search : 'newsearch' + nrOfElementsAdded">
+          </mat-form-field> 
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="replace">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> 
+            with 
+            <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="element.replace" [name]="element.replace != '' ? element.replace : 'newreplace' + nrOfElementsAdded">
+            </mat-form-field>   
+            &nbsp; &nbsp; <button mat-raised-button color="warn" alt="remove" (click)="remove(element)">X</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+    </table>
+    <br /><br />
+    <div class="row" align="center">
+        <div class="column">
+            <button mat-mini-fab color="primary" (click)="addNewRow()" type="button">+</button>
+        </div>
+        <div class="column">
+          <button mat-raised-button color="accent" type="submit" class="btn btn-success" [disabled]="!optionsForm.form.valid">Save</button>
+        </div>
+      </div>
+
+    <!--button mat-raised-button color="accent" (click)="save()">Save</button-->
+</form>

@@ -1,0 +1,23 @@
+table {
+    width: 60%;
+  }
+
+  /* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 48%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 60%;
+  margin: 0 auto;
+}
+.urlsection {
+  text-align: center;
+  width: 60%;
+}
