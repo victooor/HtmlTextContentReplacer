@@ -1,6 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Html replacer",
+    "description": "You set replacement values in the extenion options page. When conditions are met the html replacement will take place",
     "version": "1.0.0",
     "permissions": [ "tabs", "activeTab", "storage" ],
     "options_page": "index.html#/options",

@@ -13,7 +13,7 @@ chrome.storage.sync.get(
 
                 Object.keys(replacementDetails).forEach((key) => {
                     console.log("search " +  key  + ", replace with " + replacementDetails[key])
-                    //document.body.innerHTML = document.body.innerHTML.replace(new RegExp(key, "gi"), replacementDetails[key]);
+                    document.body.innerHTML = document.body.innerHTML.replace(new RegExp(key, "gi"), replacementDetails[key]);
                     /*var matches = document.querySelectorAll("*:not(html):not(head):not(script):not(meta):not(link)");
                     console.log(matches);
                     [].forEach.call(matches, function(elem) {
