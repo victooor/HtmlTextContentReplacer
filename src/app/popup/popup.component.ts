@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IHash } from '../shared/model';
+import { Replacement } from '../shared/model';
 
 @Component({
   selector: 'app-popup',

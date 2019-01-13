@@ -1,8 +1,8 @@
-import { IHash } from '../shared/model';
+import { Replacement } from '../shared/model';
 export class ReplacementData {
-  replacements: IHash = {};
+  replacements: Replacement[] = [];
   urlToBeApplied: string;
-  constructor(r: IHash, u: string) {
+  constructor(r: Replacement[], u: string) {
     this.replacements = r;
     this.urlToBeApplied = u;
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IHash } from '../shared/model';
+import { Replacement } from '../shared/model';
 import { Annotation } from './Annotation';
 import { ReplacementData } from './ReplacementData';
 
@@ -25,9 +25,9 @@ export class OptionsComponent implements OnInit {
       if(replacementData != null) {
         this.dataSource =  [];
         Object.keys(replacementData.replacements).forEach((key) => {
-          var an = new Annotation(key, replacementData.replacements[key]);
+          var an = new Annotation(replacementData.replacements[key].search, replacementData.replacements[key].replace);
           this.dataSource.push(an);
-          console.log("Value is (chrome get in options hashset) " + replacementData.replacements[key]);
+          console.log("Value is (chrome get in options hashset) " + replacementData.replacements[key].replace);
         });
         this.urlToBeApplied = replacementData.urlToBeApplied;
       }
@@ -35,7 +35,6 @@ export class OptionsComponent implements OnInit {
   }
 
   addNewRow() {
-    console.log("new row button clicked");
     this.nrOfElementsAdded++;
     this.dataSource.forEach(d => console.log("search " + d.search + "; Replace " + d.replace));
     this.dataSource = this.dataSource.concat(new Annotation("", ""));
@@ -60,13 +59,12 @@ export class OptionsComponent implements OnInit {
 
 
   save() {
-    console.log("save clicked");
     console.log("url" + this.urlToBeApplied);
     
     this.dataSource.forEach(d => console.log("search " + d.search + "; Replace " + d.replace));
-    let x: IHash = {};
+    let x: Replacement[] = [];
     this.dataSource.forEach(d => {
-      x[d.search] = d.replace;
+      x.push(new Replacement(d.search, d.replace));
     });
 
     var rData: ReplacementData = new ReplacementData(x, this.urlToBeApplied);
@@ -89,8 +87,7 @@ function getReplacementValues() : Promise<ReplacementData> {
     ,
     function(data) {
       if(data.replacementData != null) {
-        console.log("List elements chrome get in options " + data.replacementData);
-        
+
         replacementData = data.replacementData;
 
         resolve(replacementData);
