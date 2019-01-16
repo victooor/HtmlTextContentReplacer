@@ -27,20 +27,19 @@ export class OptionsComponent implements OnInit {
         Object.keys(replacementData.replacements).forEach((key) => {
           var an = new Annotation(replacementData.replacements[key].search, replacementData.replacements[key].replace);
           this.dataSource.push(an);
-          console.log("Value is (chrome get in options hashset) " + replacementData.replacements[key].replace);
         });
         this.urlToBeApplied = replacementData.urlToBeApplied;
+        
+        if(this.dataSource.length == 0)
+          this.addNewRow();
       }
     });
   }
 
   addNewRow() {
     this.nrOfElementsAdded++;
-    this.dataSource.forEach(d => console.log("search " + d.search + "; Replace " + d.replace));
     this.dataSource = this.dataSource.concat(new Annotation("", ""));
     console.log("after adding");
-    this.dataSource.forEach(d => console.log("search " + d.search + "; Replace " + d.replace));
-    
   }
 
   remove(an: Annotation) {

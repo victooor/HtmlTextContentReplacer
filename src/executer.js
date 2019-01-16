@@ -12,9 +12,6 @@ chrome.storage.sync.get(
                 
                     replacementDetails = data.replacementData.replacements;
 
-                   
-                    
-
                     Object.keys(replacementDetails).forEach((key) => {
                         console.log("search " +  replacementDetails[key].search  + ", replace with " + replacementDetails[key].replace)
                         replaceValuesInHtmlDocumentTextContent(document.body, replacementDetails[key].search, replacementDetails[key].replace);
@@ -46,7 +43,7 @@ function replaceValuesInHtmlDocumentTextContent(node, search, replace) {
         if (nodeList[x].nodeType == 3) 
             nodeList[x].textContent = nodeList[x].textContent.replace(new RegExp(search, "gi"), replace);
         else 
-            replaceValuesInHtmlDocument(nodeList[x], search, replace);
+            replaceValuesInHtmlDocumentTextContent(nodeList[x], search, replace);
     }
 
 }

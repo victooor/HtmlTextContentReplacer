@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Html replacer",
-    "description": "You set replacement values in the extension options page. When conditions are met the html replacement will take place",
+    "name": "Html text content replacer",
+    "description": "You set replacement values in the extension options page. When conditions are met the html replacement will take place, using the defined replacement vaues.",
     "version": "1.0.0",
-    "permissions": [ "tabs", "activeTab", "storage" ],
+    "permissions": [ "activeTab", "storage" ],
     "options_page": "index.html#/options",
     "browser_action": {
       "default_title": "Open Popup!",
@@ -17,7 +17,7 @@
     },
     "content_scripts": [
       {
-        "matches": ["https://*/*"], 
+        "matches": ["https://*/*", "http://*/*"], 
         "js": ["executer.js"],
         "run_at": "document_end"
       }
