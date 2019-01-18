@@ -14,23 +14,23 @@ export class OptionsComponent implements OnInit {
   displayedColumns: string[] = ['search', 'replace'];
   dataSource: Annotation[] =  [];
   urlToBeApplied: string;
-  nrOfElementsAdded: number = 0;
+  nrOfElementsAdded = 0;
 
   constructor() { }
 
   ngOnInit() {
     getReplacementValues().then(replacementData => {
       console.log('Value is ' + replacementData);
-      if(replacementData != null) {
+      if (replacementData != null) {
         this.dataSource =  [];
         Object.keys(replacementData.replacements).forEach((key) => {
-          let an = new Annotation(replacementData.replacements[key].search, replacementData.replacements[key].replace);
+          const an = new Annotation(replacementData.replacements[key].search, replacementData.replacements[key].replace);
           this.dataSource.push(an);
         });
         this.urlToBeApplied = replacementData.urlToBeApplied;
-        
-        if(this.dataSource.length == 0)
+        if (this.dataSource.length === 0) {
           this.addNewRow();
+        }
       }
     });
   }
@@ -46,8 +46,7 @@ export class OptionsComponent implements OnInit {
 
     const index = this.dataSource.indexOf(an, 0);
 
-    console.log('Index ' + index)
-    
+    console.log('Index ' + index);
     if (index > -1) {
       this.dataSource.splice(index, 1);
       this.dataSource = [...this.dataSource];
@@ -58,7 +57,6 @@ export class OptionsComponent implements OnInit {
 
   save() {
     console.log('url' + this.urlToBeApplied);
-    
     this.dataSource.forEach(d => console.log('search ' + d.search + '; Replace ' + d.replace));
     const x: Replacement[] = [];
     this.dataSource.forEach(d => {
@@ -76,15 +74,14 @@ export class OptionsComponent implements OnInit {
   }
 }
 
-function getReplacementValues() : Promise<ReplacementData> {
-  
+function getReplacementValues(): Promise<ReplacementData> {
   return new Promise ((resolve) => {
     let replacementData: ReplacementData;
     chrome.storage.sync.get(
     ['replacementData']
     ,
     function(data) {
-      if(data.replacementData != null) {
+      if (data.replacementData != null) {
 
         replacementData = data.replacementData;
 

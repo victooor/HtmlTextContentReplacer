@@ -10,8 +10,6 @@ export class PopupComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() { }
 
 }

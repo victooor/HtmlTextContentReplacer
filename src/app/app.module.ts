@@ -21,13 +21,7 @@ import { PopupComponent } from './popup/popup.component';
     PopupComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule, 
-    MatTableModule, 
-    MatInputModule, 
-    FormsModule, 
-    BrowserAnimationsModule,
-    MatButtonModule
+    BrowserModule, AppRoutingModule, MatTableModule, MatInputModule, FormsModule, BrowserAnimationsModule, MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
