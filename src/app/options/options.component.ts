@@ -15,18 +15,16 @@ export class OptionsComponent implements OnInit {
   dataSource: Annotation[] =  [];
   urlToBeApplied: string;
   nrOfElementsAdded: number = 0;
-  
 
   constructor() { }
 
   ngOnInit() {
-    
     getReplacementValues().then(replacementData => {
-      console.log("Value is " + replacementData);
+      console.log('Value is ' + replacementData);
       if(replacementData != null) {
         this.dataSource =  [];
         Object.keys(replacementData.replacements).forEach((key) => {
-          var an = new Annotation(replacementData.replacements[key].search, replacementData.replacements[key].replace);
+          let an = new Annotation(replacementData.replacements[key].search, replacementData.replacements[key].replace);
           this.dataSource.push(an);
         });
         this.urlToBeApplied = replacementData.urlToBeApplied;
@@ -39,16 +37,16 @@ export class OptionsComponent implements OnInit {
 
   addNewRow() {
     this.nrOfElementsAdded++;
-    this.dataSource = this.dataSource.concat(new Annotation("", ""));
-    console.log("after adding");
+    this.dataSource = this.dataSource.concat(new Annotation('', ''));
+    console.log('after adding');
   }
 
   remove(an: Annotation) {
-    console.log("remove clicked" + ". Search" + an.search + ", replace " + an.replace);
+    console.log('remove clicked' + '. Search' + an.search + ', replace ' + an.replace);
 
     const index = this.dataSource.indexOf(an, 0);
 
-    console.log("Index " + index)
+    console.log('Index ' + index)
     
     if (index > -1) {
       this.dataSource.splice(index, 1);
@@ -59,21 +57,21 @@ export class OptionsComponent implements OnInit {
 
 
   save() {
-    console.log("url" + this.urlToBeApplied);
+    console.log('url' + this.urlToBeApplied);
     
-    this.dataSource.forEach(d => console.log("search " + d.search + "; Replace " + d.replace));
-    let x: Replacement[] = [];
+    this.dataSource.forEach(d => console.log('search ' + d.search + '; Replace ' + d.replace));
+    const x: Replacement[] = [];
     this.dataSource.forEach(d => {
       x.push(new Replacement(d.search, d.replace));
     });
 
-    var rData: ReplacementData = new ReplacementData(x, this.urlToBeApplied);
+    const rData: ReplacementData = new ReplacementData(x, this.urlToBeApplied);
 
     chrome.storage.sync.set({
       replacementData: rData
       }
       , function() {
-          console.log("values saved");
+          console.log('values saved');
       });
   }
 }
@@ -81,7 +79,7 @@ export class OptionsComponent implements OnInit {
 function getReplacementValues() : Promise<ReplacementData> {
   
   return new Promise ((resolve) => {
-    var replacementData: ReplacementData;
+    let replacementData: ReplacementData;
     chrome.storage.sync.get(
     ['replacementData']
     ,
