@@ -1,3 +1,4 @@
+/// <reference types="chrome"/>
 import { Component, OnInit } from '@angular/core';
 import { Replacement } from '../shared/model';
 import { Annotation } from './Annotation';
