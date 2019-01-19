@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Replacement } from '../shared/model';
 
 @Component({
   selector: 'app-popup',

@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatTableModule} from '@angular/material/table';
-import {MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { PopupComponent } from './popup/popup.component';
     PopupComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, MatTableModule, MatInputModule, FormsModule, BrowserAnimationsModule, MatButtonModule
+    // tslint:disable-next-line:max-line-length
+    BrowserModule, AppRoutingModule, MatTableModule, MatInputModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

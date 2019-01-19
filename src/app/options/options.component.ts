@@ -28,25 +28,21 @@ export class OptionsComponent implements OnInit {
           this.dataSource.push(an);
         });
         this.urlToBeApplied = replacementData.urlToBeApplied;
-        if (this.dataSource.length === 0) {
-          this.addNewRow();
-        }
       }
     });
+
+    if (this.dataSource.length === 0) {
+      this.addNewRow();
+    }
   }
 
   addNewRow() {
     this.nrOfElementsAdded++;
     this.dataSource = this.dataSource.concat(new Annotation('', ''));
-    console.log('after adding');
   }
 
   remove(an: Annotation) {
-    console.log('remove clicked' + '. Search' + an.search + ', replace ' + an.replace);
-
     const index = this.dataSource.indexOf(an, 0);
-
-    console.log('Index ' + index);
     if (index > -1) {
       this.dataSource.splice(index, 1);
       this.dataSource = [...this.dataSource];
@@ -56,7 +52,6 @@ export class OptionsComponent implements OnInit {
 
 
   save() {
-    console.log('url' + this.urlToBeApplied);
     this.dataSource.forEach(d => console.log('search ' + d.search + '; Replace ' + d.replace));
     const x: Replacement[] = [];
     this.dataSource.forEach(d => {
@@ -82,9 +77,7 @@ function getReplacementValues(): Promise<ReplacementData> {
     ,
     function(data) {
       if (data.replacementData != null) {
-
         replacementData = data.replacementData;
-
         resolve(replacementData);
       }
     }

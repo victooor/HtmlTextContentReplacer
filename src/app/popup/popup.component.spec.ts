@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PopupComponent } from './popup.component';
 
 describe('PopupComponent', () => {
@@ -19,7 +18,4 @@ describe('PopupComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
