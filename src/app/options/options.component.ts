@@ -28,12 +28,13 @@ export class OptionsComponent implements OnInit {
           this.dataSource.push(an);
         });
         this.urlToBeApplied = replacementData.urlToBeApplied;
+        if (this.dataSource.length === 0) {
+          this.addNewRow();
+        }
       }
     });
 
-    if (this.dataSource.length === 0) {
-      this.addNewRow();
-    }
+    
   }
 
   addNewRow() {
@@ -52,7 +53,6 @@ export class OptionsComponent implements OnInit {
 
 
   save() {
-    this.dataSource.forEach(d => console.log('search ' + d.search + '; Replace ' + d.replace));
     const x: Replacement[] = [];
     this.dataSource.forEach(d => {
       x.push(new Replacement(d.search, d.replace));

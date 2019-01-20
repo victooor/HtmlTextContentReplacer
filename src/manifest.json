@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "Html text content replacer",
-    "description": "You set replacement values in the extension options page. When conditions are met the html replacement will take place, using the defined replacement vaues.",
+    "name": "Website text content replacer",
+    "description": "Let's you define some replacement values. When the replacement is run you should be looking at a friendlier website",
     "version": "1.0.0",
     "permissions": [ "activeTab", "storage" ],
     "options_page": "index.html#/options",
