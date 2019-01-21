@@ -32,9 +32,7 @@ export class OptionsComponent implements OnInit {
           this.addNewRow();
         }
       }
-    });
-
-    
+    });    
   }
 
   addNewRow() {
