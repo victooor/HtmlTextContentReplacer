@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Website text content replacer",
-    "description": "Let's you define some replacement values. When the replacement is run you should be looking at a friendlier website",
+    "description": "Let's you define some replacement values. After the replacement is run you should be looking at a friendlier website",
     "version": "1.0.0",
     "permissions": [ "activeTab", "storage" ],
     "options_page": "index.html#/options",

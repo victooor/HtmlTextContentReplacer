@@ -31,7 +31,8 @@ export class OptionsComponent implements OnInit {
         if (this.dataSource.length === 0) {
           this.addNewRow();
         }
-      }});    
+      }
+    });
   }
 
   addNewRow() {
