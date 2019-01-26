@@ -1,4 +1,4 @@
-# Travis CI
+# CI
 [![Build Status](https://travis-ci.org/victooor/HtmlTextContentReplacer.svg?branch=master)](https://travis-ci.org/victooor/HtmlTextContentReplacer)
 
 # HtmlTextContentReplacer
