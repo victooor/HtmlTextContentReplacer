@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Website text content replacer",
     "description": "Lets you change some content (words, phrases etc) on a website to more familiar or enjoyable ones.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "permissions": [ "activeTab", "storage" ],
     "options_page": "index.html#/options",
     "browser_action": {
