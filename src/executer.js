@@ -30,7 +30,8 @@ function replaceValuesInHtmlDocumentTextContent(node, replacementDetails) {
         // text node, search directly
         if (nodeList[x].nodeType == 3) {
             Object.keys(replacementDetails).forEach((key) => {
-                nodeList[x].textContent = nodeList[x].textContent.replace(new RegExp(replacementDetails[key].search, "gi"), replacementDetails[key].replace);
+                var search = escapeRegexSpecialChars(replacementDetails[key].search);
+                nodeList[x].textContent = nodeList[x].textContent.replace(new RegExp(search, "gi"), replacementDetails[key].replace);
             });
         }
         else 
