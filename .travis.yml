@@ -10,5 +10,4 @@ before_script:
   - npm install -g @angular/cli
 script:
 - ng lint
-- bash <(curl -s https://blackducksoftware.github.io/hub-detect/hub-detect.sh) --blackduck.hub.url="https://saleshub.blackducksoftware.com" --blackduck.hub.username=username --blackduck.hub.password=******* --blackduck.hub.trust.cert=true --detect.policy.check=true
 - ng build --prod
