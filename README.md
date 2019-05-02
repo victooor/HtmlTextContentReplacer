@@ -1,3 +1,6 @@
+# Store
+Published to chrome store: https://chrome.google.com/webstore/detail/website-text-content-repl/fmbchninojmfdlimbakaohgodgjpihcc
+
 # Travis CI
 
 [![Build Status](https://travis-ci.org/victooor/HtmlTextContentReplacer.svg?branch=master)](https://travis-ci.org/victooor/HtmlTextContentReplacer)
