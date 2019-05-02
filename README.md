@@ -1,5 +1,5 @@
 # Store
-Published to chrome store: https://chrome.google.com/webstore/detail/website-text-content-repl/fmbchninojmfdlimbakaohgodgjpihcc
+Published to [chrome store](https://chrome.google.com/webstore/detail/website-text-content-repl/fmbchninojmfdlimbakaohgodgjpihcc)
 
 # Travis CI
 
