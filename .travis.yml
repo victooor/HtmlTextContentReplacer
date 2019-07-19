@@ -11,3 +11,5 @@ before_script:
 script:
 - ng lint
 - ng build --prod
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
