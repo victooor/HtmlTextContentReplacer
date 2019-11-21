@@ -5,10 +5,6 @@ Published to [chrome store](https://chrome.google.com/webstore/detail/website-te
 
 [![Build Status](https://travis-ci.org/victooor/HtmlTextContentReplacer.svg?branch=master)](https://travis-ci.org/victooor/HtmlTextContentReplacer)
 
-# Black Duck Security Risk
-
-[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/victooor/HtmlTextContentReplacer/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/victooor/HtmlTextContentReplacer/branches/master)
-
 # HtmlTextContentReplacer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
