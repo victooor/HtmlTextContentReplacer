@@ -1,11 +1,11 @@
 {
-    "manifest_version": 2,
-    "name": "Website text content replacer",
-    "description": "Lets you change some content (words, phrases etc) on a website to more familiar or enjoyable ones.",
-    "version": "1.0.2",
-    "permissions": [ "activeTab", "storage" ],
+    "manifest_version": 3,
+    "name": "Website Text Replacer",
+    "description": "Customise text on any website. Swap annoying words, jargon, or spoilers for terms that are clear and fun.",
+    "version": "1.1.0",
+    "permissions": [ "storage" ],
     "options_page": "index.html#/options",
-    "browser_action": {
+    "action": {
       "default_title": "Open Popup!",
       "default_popup": "index.html#/popup"
     },
@@ -21,6 +21,5 @@
         "js": ["executer.js"],
         "run_at": "document_end"
       }
-    ],
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+    ]
 }

@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'Html text content replacer'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Html text content replacer');
+    expect(app.title).toEqual('Website Text Replacer');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Html text content replacer!');
+    expect(compiled.querySelector('h1').textContent).toContain('Website Text Replacer!');
   });
 });
