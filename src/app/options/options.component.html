@@ -1,14 +1,14 @@
 <div class="urlsection">
-  <h2>Please define replacement values below</h2>
+  <h2>Replacement Rules</h2>
 </div>
 
 <form class="example-form" (ngSubmit)="save()" #optionsForm="ngForm">
     <div class="urlsection">
       <ng-container>
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Website on which to apply</mat-label>
+          <mat-label>Target Domain</mat-label>
           <input matInput [(ngModel)]="urlToBeApplied" name="urlToBeApplied">
-          <mat-hint>The search and replace will be applied only on the above mentioned url and all the pages matching the specified domain</mat-hint>
+          <mat-hint>Rules will apply to this URL and all matching domain pages</mat-hint>
         </mat-form-field> 
       </ng-container>
     </div>
@@ -22,7 +22,7 @@
       <ng-container matColumnDef="search">
         <th mat-header-cell *matHeaderCellDef> </th>
         <td mat-cell *matCellDef="let element">
-          Replace &nbsp;
+          Find &nbsp;
           <mat-form-field class="example-full-width">
             <input matInput [(ngModel)]="element.search" [name]="element.search != '' ? element.search : 'newsearch' + nrOfElementsAdded">
           </mat-form-field> 
@@ -32,7 +32,7 @@
       <ng-container matColumnDef="replace">
         <th mat-header-cell *matHeaderCellDef> </th>
         <td mat-cell *matCellDef="let element"> 
-            with 
+            replace with 
             <mat-form-field class="example-full-width">
                 <input matInput [(ngModel)]="element.replace" [name]="element.replace != '' ? element.replace : 'newreplace' + nrOfElementsAdded">
             </mat-form-field>   
